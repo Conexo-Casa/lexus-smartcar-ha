@@ -1,0 +1,12 @@
+{
+  "domain": "smartcar",
+  "name": "Smartcar",
+  "codeowners": ["@Conexo-Casa"],
+  "config_flow": true,
+  "documentation": "https://github.com/Conexo-Casa/lexus-smartcar-ha",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Conexo-Casa/lexus-smartcar-ha/issues",
+  "requirements": [],
+  "version": "2.0.0"
+}

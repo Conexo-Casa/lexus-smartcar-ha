@@ -1,0 +1,89 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Smartcar",
+        "description": "Enter your Smartcar application credentials from the [Smartcar Dashboard](https://dashboard.smartcar.com) → your app → **API Credentials**. Your vehicle must already be connected to the application (via Smartcar Connect or the dashboard simulator).",
+        "data": {
+          "client_id": "Client ID",
+          "client_secret": "Client Secret"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Update Smartcar secret",
+        "description": "Enter a new Client Secret for your Smartcar application.",
+        "data": {
+          "client_secret": "Client Secret"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid Client ID or Client Secret.",
+      "cannot_connect": "Could not reach Smartcar. Please try again."
+    },
+    "abort": {
+      "already_configured": "This Smartcar application is already configured.",
+      "reauth_successful": "Successfully updated the Smartcar secret."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Smartcar options",
+        "data": {
+          "scan_interval_minutes": "Polling interval (minutes)"
+        },
+        "data_description": {
+          "scan_interval_minutes": "How often to poll Smartcar. Smartcar bills per request and rate-limits, so keep this as high as your needs allow (minimum 5 minutes)."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "odometer": { "name": "Odometer" },
+      "fuel_level": { "name": "Fuel level" },
+      "fuel_remaining": { "name": "Fuel remaining" },
+      "fuel_range": { "name": "Fuel range" },
+      "oil_life": { "name": "Engine oil life" },
+      "speed": { "name": "Speed" },
+      "temp_exterior": { "name": "Outside temperature" },
+      "temp_cabin": { "name": "Cabin temperature" },
+      "gear": {
+        "name": "Gear",
+        "state": {
+          "PARK": "Park",
+          "DRIVE": "Drive",
+          "REVERSE": "Reverse",
+          "NEUTRAL": "Neutral"
+        }
+      },
+      "drive_mode": { "name": "Drive mode" },
+      "tire_front_left": { "name": "Tire pressure front left" },
+      "tire_front_right": { "name": "Tire pressure front right" },
+      "tire_back_left": { "name": "Tire pressure rear left" },
+      "tire_back_right": { "name": "Tire pressure rear right" }
+    },
+    "binary_sensor": {
+      "online": { "name": "Online" },
+      "at_home": { "name": "At home" },
+      "in_service": { "name": "In service" },
+      "front_trunk": { "name": "Front trunk" },
+      "rear_trunk": { "name": "Rear trunk" },
+      "sunroof": { "name": "Sunroof" },
+      "diag_airbag": { "name": "Airbag system" },
+      "diag_brakefluid": { "name": "Brake fluid" },
+      "diag_tirepressure": { "name": "Tire pressure warning" },
+      "diag_transmission": { "name": "Transmission" }
+    },
+    "device_tracker": {
+      "location": { "name": "Location" }
+    },
+    "lock": {
+      "doors": { "name": "Doors" }
+    },
+    "button": {
+      "refresh": { "name": "Refresh data" }
+    }
+  }
+}
