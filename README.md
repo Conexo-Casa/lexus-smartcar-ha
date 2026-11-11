@@ -1,6 +1,6 @@
 # Smartcar for Home Assistant (Lexus)
 
-A HACS custom integration that connects your vehicle to Home Assistant through the
+A custom integration that connects your vehicle to Home Assistant through the
 [Smartcar](https://smartcar.com) **API v3**. Built and tested against a Lexus
 (Toyota Connected) account, but the Smartcar API is make-agnostic — the same
 integration works for any supported brand.
@@ -45,10 +45,34 @@ Created per connected vehicle (those the vehicle doesn't report stay *unavailabl
 
 ## Installation
 
-### HACS
-1. HACS → ⋮ → **Custom repositories** → add
-   `https://github.com/Conexo-Casa/lexus-smartcar-ha` as an **Integration**.
-2. Install **Smartcar**, then restart Home Assistant.
+### Marketplace (Home Assistant 2026.11 and newer)
+
+> [!WARNING]
+> This integration uses the domain `smartcar`, the same as
+> [wbyoung/smartcar](https://github.com/wbyoung/smartcar) in the Marketplace catalog.
+> Home Assistant can only have one of the two installed.
+
+[![Open your Home Assistant instance and show this repository in the Marketplace.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Conexo-Casa&repository=lexus-smartcar-ha&category=integration)
+
+Or by hand:
+
+1. Go to **Settings → Marketplace**.
+2. Select **Add from link** (top right) and enter `Conexo-Casa/lexus-smartcar-ha`.
+   The first time, Home Assistant asks you to connect GitHub. That is a one-time,
+   read-only sign-in on github.com.
+3. Open **Smartcar (Lexus)** and select **Install**. The setup screen opens right away; a first
+   install doesn't need a restart.
+
+Updates show up under **Settings → Updates**. After an update, Home Assistant shows a
+repair that offers to restart.
+
+### HACS (Home Assistant 2026.10 and older)
+
+1. HACS → **Integrations** → **⋮** → **Custom repositories**.
+2. Add `https://github.com/Conexo-Casa/lexus-smartcar-ha`, category **Integration**.
+3. Download **Smartcar (Lexus)**, then restart Home Assistant.
+
+An existing HACS install moves to the Marketplace by itself when you upgrade to 2026.11.
 
 ### Manual
 Copy `custom_components/smartcar/` into `config/custom_components/` and restart.
