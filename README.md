@@ -27,6 +27,9 @@ Created per connected vehicle (those the vehicle doesn't report stay *unavailabl
 > EV/hybrid vehicles expose different signals (battery, charging) — those map in
 > automatically once a vehicle reporting them is connected.
 
+The **Gear** sensor reports `park`, `drive`, `reverse` or `neutral` (lowercase since
+the Marketplace release; automations that matched `PARK` etc. need updating).
+
 ## Prerequisites
 
 1. **A Smartcar developer app (v3).** Sign up at
@@ -112,3 +115,7 @@ Copy `custom_components/smartcar/` into `config/custom_components/` and restart.
 
 Not affiliated with Smartcar, Toyota, or Lexus. Remote commands depend on your
 vehicle's capabilities and connected-services subscription. Use at your own risk.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
