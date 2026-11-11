@@ -138,9 +138,10 @@ SENSORS: tuple[SmartcarSensorDescription, ...] = (
         translation_key="gear",
         code="transmission-gearstate",
         device_class=SensorDeviceClass.ENUM,
-        options=["PARK", "DRIVE", "REVERSE", "NEUTRAL"],
+        # Smartcar sends PARK/DRIVE/...; HA translation keys must be lowercase.
+        options=["park", "drive", "reverse", "neutral"],
         icon="mdi:car-shift-pattern",
-        value_fn=lambda b: b.get("value"),
+        value_fn=lambda b: v.lower() if isinstance(v := b.get("value"), str) else None,
     ),
     SmartcarSensorDescription(
         key="drive_mode",
